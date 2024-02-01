@@ -1,0 +1,26 @@
+.table-headcount-0 {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-headcount-0 > div {
+  display: table-row;
+}
+
+.table-headcount-0 > div:nth-child(even) > div {
+  background: var(--table-row-bg-color-even);
+}
+
+.table-headcount-0 > div > div {
+  display: table-cell;
+  padding: 8px;
+  border: 1px solid var(--table-body-border-color);
+  color: var(--table-body-text-color);
+  font-family: Poppins;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+
+}

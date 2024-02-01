@@ -1,0 +1,38 @@
+.breadcrumbs-wrapper {
+    display: none;
+}
+@media(min-width: 900px) {
+    .breadcrumbs-wrapper {
+        display: block;
+    }
+    .breadcrumbs > div {
+        display: flex;
+    }
+    
+    .breadcrumbs > div > div{
+        display: flex;
+    }
+    
+    .breadcrumbs > div > div:not(:last-child)::after {
+        content: url("./bcrumb-chev-right.svg");
+        margin: 0 5px;
+    }
+    
+    .breadcrumbs > div > div:not(:last-child) a {
+        text-decoration: none;
+        color: var(--brdcrmb-secondary-color);
+        font-family: Poppins;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 400;
+    }
+    
+    .breadcrumbs > div > div:last-child a {
+        text-decoration: none;
+        color: var(--brdcrmb-primary-color);
+        font-family: Poppins;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 600;
+    }
+}

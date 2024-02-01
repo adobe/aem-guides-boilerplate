@@ -1,0 +1,9 @@
+.shortdesc {
+  font-size: 1.2em;
+  color: var(--shortdesc-color);
+  line-height: 1.5em;
+  font-weight: 100;
+  padding: 1em 0;
+  margin-bottom: 0.5em;
+  padding-top: 0;
+}

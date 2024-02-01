@@ -1,0 +1,440 @@
+/* header and nav layout */
+header.header-wrapper {
+  min-height: var(--nav-height);
+}
+
+header .header-button-group > div {
+  display: flex;
+  gap: 1.5rem;
+}
+
+header .nav-wrapper {
+  width: 100%;
+  z-index: 2;
+  height: var(--nav-height);
+  position: fixed;
+  background-color: var(--header-bg-color);
+}
+
+.nav-toc-btn {
+  background-color: var(--background-color);
+  width: calc(100% + 4rem);
+  margin-left: -2rem;
+  height: 100%;
+  grid-area: toc-btn;
+}
+
+.nav-toc-btn a {
+  display: flex;
+  line-height: 1.25rem;
+  text-decoration: none;
+  align-items: center;
+}
+
+.nav-toc-btn a::before {
+  content: url(../sidenav/toc-icon.svg);
+  padding-right: 0.5rem;
+  line-height: 1rem;
+}
+
+.nav-toc-btn > p picture {
+  padding-right: 0.5rem;
+}
+
+.nav-toc-btn > p {
+  border-radius: 0.25rem;
+  border: 0.5px solid var(--header-mob-toc-btn-border-color);
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  min-width: 5rem;
+  height: 2rem;
+  background: var(--header-mob-toc-btn-bg-color);
+  margin: 1rem 2rem;
+}
+
+header nav {
+  box-sizing: border-box;
+  display: grid;
+  grid-template:
+  'brand tools tools' var(--nav-height)
+  'toc-btn toc-btn toc-btn' 4rem
+  'sections sections sections' 1fr / auto 1fr auto;
+  align-items: center;
+  gap: 0rem 2em;
+  height: var(--nav-height);
+  padding: 0 1rem;
+  font-family: var(--body-font-family);
+}
+
+header nav[aria-expanded="true"] {
+  gap: 0em 2em;
+  grid-template:
+  'brand hamburger' var(--nav-height)
+  'sections toc-btn' calc(100% - 4rem)
+  'tools tools' 0;
+  overflow-y: auto;
+  min-height: 100vh;
+}
+
+header nav[hamburger-expanded="true"] {
+  gap: 0em 2em;
+  grid-template:
+    'brand hamburger' var(--nav-height)
+    'sections toc-btn' 0px
+    'tools tools' 1fr;
+  overflow-y: auto;
+  min-height: 100vh;
+}
+
+header nav[hamburger-expanded="true"] .nav-toc-btn {
+  display: none;
+}
+
+header nav[hamburger-expanded="true"] .nav-tools {
+  height: 100%;
+  background-color: var(--sidenav-bg-color);
+  width: calc(100% + 2rem);
+  margin-left: -1rem;
+}
+
+header nav[hamburger-expanded="true"] .nav-tools .header-button-group{
+  padding: 1rem;
+}
+
+header nav[hamburger-expanded="true"] .header-button-group > div {
+  display: block;
+}
+
+header nav[aria-expanded="true"] .nav-toc-btn {
+  background-color: unset;
+  width: 2rem;
+  height: 2rem;
+  margin-left: -4rem;
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+header nav[aria-expanded="true"] .nav-toc-btn > p {
+  padding-right: 0;
+  padding-left: 0;
+  width: 100%;
+  min-width: unset;
+  height: 100%;
+  background: var(--header-mob-toc-btn-bg-color);
+  margin: 0;
+  border: none;
+}
+
+header nav[aria-expanded="true"] .nav-toc-btn > p a {
+  font-size: 0;
+  margin-left: 0.5rem;
+}
+
+header nav[aria-expanded="true"] .nav-toc-btn > p a::before {
+  content: url("../sidenav/close.svg");
+  margin-left: 0.5rem;
+  padding-right: 0.0rem;
+}
+
+
+@media (max-width: 900px) {
+  
+  header nav[aria-expanded="true"] .nav-tools {
+    display: none;
+  }
+  
+header .header-button-group > div {
+  gap: 0.5rem;
+}
+
+
+
+header .header-button-group > div > div {
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--header-button-group-button-border-color);
+  background: var(--header-button-group-button-bg-color);
+}
+
+header .header-button-group > div > div a {
+  background: red;
+  font-size: 0;
+  width: 100%;
+  height: 100%;
+}
+
+header .header-button-group > div > div:nth-child(1) a {
+  background: url('./contact.svg');
+  background-size: contain;
+}
+
+header .header-button-group > div > div:nth-child(2) a {
+  background: url('./signin.svg');
+  background-size: contain;
+}
+
+header .header-button-group {
+  display: flex;
+  flex-direction: row;
+}
+
+header .header-button-group > div {
+  display: flex;
+  flex-direction: row;
+}
+  header nav[aria-expanded="true"] .nav-sections {
+    display: block;
+    visibility: visible;
+    align-self: start;
+    width: calc(100% - 3rem);
+    margin-left: -2rem;
+    padding: 0 3rem;
+    background: var(--sidenav-bg-color);
+  }
+}
+
+@media (min-width: 600px) {
+  header nav {
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 900px) {
+
+
+  header .header-button-group > div > div {
+    display: inline-flex;
+    padding: 0.88rem 1.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--header-button-group-button-border-color);
+    background: var(--header-button-group-button-bg-color);
+    height: 0.62rem;
+  }
+
+  header nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header nav[aria-expanded="true"] {
+    min-height: 0;
+    overflow: visible;
+  }
+}
+
+header nav p {
+  margin: 0;
+  line-height: 1;
+}
+
+header nav a:any-link {
+  color: currentcolor;
+}
+
+/* hamburger */
+header nav .nav-hamburger {
+  grid-area: hamburger;
+  display: none;
+}
+
+header nav .nav-hamburger button {
+  height: 22px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: inherit;
+  overflow: initial;
+  text-overflow: initial;
+  white-space: initial;
+}
+
+header nav .nav-hamburger-icon{
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  width: 20px;
+}
+
+
+header nav[aria-expanded="false"] .nav-hamburger-icon {
+  height: 100%;
+}
+
+header nav[aria-expanded="true"] .nav-hamburger-icon {
+  height: 22px;
+}
+
+@media (min-width: 900px) {
+  header nav .nav-toc-btn {
+    display: none;
+  }
+}
+
+/* brand */
+header .nav-brand {
+  grid-area: brand;
+  height: 64px;
+  flex-basis: 64px;
+  font-size: var(--heading-font-size-s);
+  font-weight: 700;
+  line-height: 1;
+}
+
+header nav .nav-brand img {
+  width: 64px;
+  height: 100%;
+}
+
+/* sections */
+header nav .nav-sections {
+  grid-area: sections;
+  flex: 1 1 auto;
+  height: 100%;
+  display: none;
+  visibility: hidden;
+  background-color: var(--overlay-color);
+  overflow: auto;
+}
+
+nav .nav-sections h3 {
+  overflow-wrap: break-word;
+  color: var(--sidenav-title-color);
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: -1rem;
+}
+
+header nav[aria-expanded="true"] .nav-sections {
+  display: block;
+  visibility: visible;
+  align-self: start;
+}
+
+header nav .nav-sections ul  {
+  list-style: none;
+  padding-left: 0;
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+}
+
+header nav .nav-sections ul > li {
+  font-weight: 700;
+}
+
+header nav .nav-sections ul > li > ul {
+  margin-top: 0;
+}
+
+header nav .nav-sections ul > li > ul > li {
+  font-weight: 500;
+}
+
+@media (min-width: 900px) {
+  nav .nav-sections h3 {
+    display: none;
+  }
+  header nav .nav-sections {
+    display: block;
+    visibility: visible;
+    white-space: nowrap;
+  }
+
+  header nav[aria-expanded="true"] .nav-sections {
+    align-self: unset;
+  }
+
+  header nav .nav-sections .nav-drop {
+    position: relative;
+    padding-right: 16px;
+    cursor: pointer;
+  }
+
+  header nav .nav-sections .nav-drop::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: .5em;
+    right: 2px;
+    transform: rotate(135deg);
+    width: 6px;
+    height: 6px;
+    border: 2px solid currentcolor;
+    border-radius: 0 1px 0 0;
+    border-width: 2px 2px 0 0;
+  }
+
+  header nav .nav-sections .nav-drop[aria-expanded="true"]::after {
+    top: unset;
+    bottom: .5em;
+    transform: rotate(315deg);
+  }
+
+  header nav .nav-sections ul {
+    display: flex;
+    gap: 2em;
+    margin: 0;
+    font-size: var(--body-font-size-xs);
+  }
+
+  header nav .nav-sections > ul > li {
+    flex: 0 1 auto;
+    position: relative;
+    font-weight: 500;
+  }
+
+  header nav .nav-sections > ul > li > ul {
+    display: none;
+    position: relative;
+  }
+
+  header nav .nav-sections > ul > li[aria-expanded="true"] > ul {
+    display: block;
+    position: absolute;
+    left: -1em;
+    width: 200px;
+    margin-top: 12px;
+    padding: 1em;
+    background-color: var(--highlight-background-color);
+    white-space: initial;
+  }
+
+  header nav .nav-sections > ul > li > ul::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 8px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid var(--highlight-background-color);
+  }
+
+  header nav .nav-sections > ul > li > ul > li {
+    padding: 8px 0;
+  }
+}
+
+/* tools */
+header nav .nav-tools {
+  grid-area: tools;
+  display: flex;
+  flex-direction: row-reverse;
+}

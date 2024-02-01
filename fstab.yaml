@@ -1,0 +1,5 @@
+mountpoints:
+  /:
+    url: https://dita-franklin-worker.adobeaem.workers.dev/your-user-name/your-repo-name/main/docs
+    type: markup
+

@@ -1,0 +1,28 @@
+.note {
+    background: var(--note-block-bg-color);
+    padding: 18px 24px;
+    border-left: 4px solid var(--note-block-border-color);
+    margin-bottom: 1em;
+    font-size: 14px;
+}
+
+.note.caution {
+    border-radius: 0.25rem;
+    border: 1px solid var(--note-caution-border-color);
+    background: var(--note-caution-bg-color);
+}
+
+.note.hazardstatement, .note.danger {
+    border-radius: 0.25rem;
+    border: 1px solid var(--note-hazard-border-color);
+    background: var(--note-hazard-bg-color);
+}
+
+.hazardstatement > div:first-child > div > p::before {
+    content: url("./hazard-note.svg");
+    margin-right: 0.5rem;
+}
+
+.note.my-custom-class {
+    background: green;
+}

@@ -1,0 +1,391 @@
+/*
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+ :root {
+  /* colors */
+  --link-color: #035fe6;
+  --link-hover-color: #136ff6;
+  --background-color: #fff;
+  --overlay-background-color: #eee;
+  --highlight-background-color: #ccc;
+  --text-color: rgb(74, 74, 74);
+  --sidenav-bg-color: #F1F1F1;
+  --sidenav-title-color: #000;
+  --bg-color : #ffffff;
+
+  /* note */
+  --note-block-bg-color: #eee;
+  --note-block-border-color: #ddd;
+  --note-block-header-color: #999;
+  --note-hazard-bg-color: #FFEBE7;
+  --note-hazard-border-color: #EA3829;
+  --note-caution-border-color: #f5c823;
+  --note-caution-bg-color: #fff9e5;
+
+  /* fonts */
+  --body-font-family: Poppins, adobe-clean, "Source Sans Pro", -apple-system, "system-ui", "Segoe UI", Roboto, Ubuntu, "Trebuchet MS", "Lucida Grande";
+  --heading-font-family: var(--body-font-family);
+  --fixed-font-family: Poppins, 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+
+  /* body sizes */
+  --body-font-size-m: 22px;
+  --body-font-size-s: 18px;
+  --body-font-size-xs: 16px;
+  --body-font-size-xxs: 14px;
+
+  /* nav height */
+  --nav-height: 4rem;
+
+  --brdcrmb-primary-color: #000;
+  --brdcrmb-secondary-color: #000;
+  --hover-bg-color : rgba(50,50,50,.05);
+  --sidenav-selection-color: #642CDB;
+  --sidenav-text-color: #484848;
+  --sidenav-bullet-color: #C0C0C0;
+  --table-header-bg-color: rgba(11, 29, 89, 0.80);
+  --table-header-text-color: #FFF;
+  --table-body-border-color: #000;
+  --table-body-text-color: #000;
+  --table-row-bg-color-even: #F0F0F0;
+
+  /* Main content vars */
+  --alias-heading-text-line-height: 1.3;
+  --heading-xl-text-size: 36px;
+  --alias-heading-xl-text-size: 36px;
+  --alias-heading-s-margin-top: 16px;
+  --global-dimension-size-115: 9px;
+  --alias-heading-text-font-weight-regular: 700;
+
+  /* Footer vars*/
+  --footer-font-family: Poppins, adobe-clean, sans-serif;
+  --footer-font-size: 12px;
+  --footer-font-weight: 400;
+  --footer-background-color: #0B1D59;
+  --footer-border-color: rgb(234, 234, 234);
+  --footer-font-color: #fff;
+
+  /* Shortdesc vars*/
+  --shortdesc-color: #666;
+
+  /* Hero vars*/
+  --hero-heading-text-color: rgb(74, 74, 74);
+
+  /* Minitoc */
+  --minitoc-side-selection-color: #0B1D59;
+  --minitoc-title-color: #606060;
+  --minitoc-selected-color: #222;
+  --minitoc-bg-color: #DDE5FF33;
+  --minitoc-text-color: #484848;
+
+  /*Header*/
+  --header-bg-color: #0B1D59;
+  --header-title-color: #FFF;
+  --header-button-group-button-border-color: #0B1D59;
+  --header-button-group-button-bg-color: #fff;
+  --header-mob-toc-btn-bg-color: #F1F1F1;
+  --header-mob-toc-btn-border-color: #E7E7E7;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--body-font-size-xs);
+  margin: 0;
+  font-family: var(--body-font-family);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  display: none;
+}
+
+body.appear {
+  display: flex;
+  height: 100%;
+}
+
+header {
+  height: var(--nav-height);
+  min-height: var(--nav-height);
+  background-color: var(--header-bg-color);
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+  line-height: var(--alias-heading-text-line-height);
+  font-size: var(--heading-xl-text-size, var(--alias-heading-xl-text-size));
+  margin-top: var(--alias-heading-s-margin-top);
+  margin-bottom: var(--global-dimension-size-115);
+  font-weight: var(--alias-heading-text-font-weight-regular);
+  font-family: var(--heading-font-family);
+}
+
+p, dl, ol, ul, pre, blockquote {
+  margin-top: unset;
+  margin-bottom: 1em;
+}
+
+hr {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border: 0;
+  border-bottom: 1px solid var(--overlay-background-color);
+}
+
+code, pre, samp {
+  font-family: var(--fixed-font-family);
+  font-size: var(--body-font-size-s);
+}
+
+code, samp {
+  padding: .125em;
+}
+
+pre {
+  overflow: scroll;
+}
+
+main pre {
+  background-color: var(--overlay-background-color);
+  padding: 1em;
+  border-radius: .25em;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+a:any-link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--link-hover-color);
+}
+
+main {
+  min-height: calc(100% - var(--nav-height));
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+
+/* buttons */
+a.button:any-link, button {
+  font-family: var(--body-font-family);
+  display: inline-block;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: 2px solid transparent;
+  padding: 5px 30px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--background-color);
+  background-color: var(--link-color);
+  margin: 16px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 30px;
+}
+
+a.button:hover, a.button:focus, button:hover, button:focus  {
+  background-color: var(--link-hover-color);
+  cursor: pointer;
+}
+
+button:disabled, button:disabled:hover {
+  background-color: var(--overlay-background-color);
+  cursor: unset;
+}
+
+a.button.secondary, button.secondary {
+  background-color: unset;
+  border: 2px solid currentcolor;
+  color: var(--text-color)
+}
+
+main input {
+  font-size: 1.25rem;
+  width: 100%;
+  max-width: 50rem;
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.75rem 0.6rem;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+main input:hover {
+  border: 1px solid var(--text-color);
+}
+
+main blockquote {
+  font-style: italic;
+  margin: 3rem;
+  text-indent: -1rem;
+  hanging-punctuation: first;
+}
+
+main blockquote p::before {
+  content: "“";
+  line-height: 0;
+}
+
+main blockquote p::after {
+  content: "”";
+  line-height: 0;
+}
+
+main img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+.icon {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+}
+
+.icon svg {
+  height: 100%;
+  width: 100%;
+}
+
+main .section {
+  overflow: auto;
+  padding: 1rem;
+}
+
+main .section:empty {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  main .section {
+    /* overflow: auto; */
+    padding: 1rem;
+  }
+
+  body  {
+    font-size: var(--body-font-size-xs);
+  }
+}
+
+header .spinner-wheel-suspense {
+  background-image: url('./loader.gif');
+  background-repeat: no-repeat;
+  background-size: 1.5rem 1.5rem;
+}
+
+.force-hide {
+  display: none !important;
+}
+
+.collapse-width {
+  width: 1rem !important;
+  min-width: 0 !important;
+}
+
+@media (min-width: 900px) {
+  .section > div {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+   /*different blocks css for very first load of style.css*/
+  .sidenav-container {
+    width: 20rem;
+  }
+  .minitoc-container {
+    width: 15rem;
+  } 
+  .section.breadcrumbs-container {
+    width: calc(100% - 43rem);
+    max-width: calc(100% - 43rem);
+    /* flex-grow: 1; */
+  }
+}
+
+.section.breadcrumbs-container {
+  flex-grow: 1;
+  overflow-x: auto;
+  padding-top: 1rem;
+}
+
+@media(max-width: 900px) {
+  .section.breadcrumbs-container {
+    flex-grow: 1;
+    padding-top: 3rem !important;
+  }
+
+  main {
+    min-height: unset;
+  }
+}
+
+/* section metadata */
+main .section.highlight {
+  background-color: var(--highlight-background-color);
+}
+
+/*
+list styles
+*/
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ol ul {
+  list-style-type: disc;
+}
+
+ul ul {
+  list-style-type: circle;
+}
+
+ul ol, ol ol {
+  list-style-type: lower-alpha;
+}
+
+ol ol ol {
+  list-style-type: lower-roman;
+}
+
+
+body {
+  overflow: hidden;
+}
+
+body.hide-content-scroll {
+  overflow: auto;
+}
+
+.hide-content-scroll main .breadcrumbs-container{
+  overflow: hidden;
+}

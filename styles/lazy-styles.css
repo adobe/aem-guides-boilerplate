@@ -1,0 +1,6 @@
+/* add global styles that can be loaded post LCP here */
+@media (min-width: 900px) {
+  .section.breadcrumbs-container {
+    max-width: unset;
+  }
+}

@@ -1,0 +1,37 @@
+.table-headcount-2 {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-headcount-2 > div {
+  display: table-row;
+}
+
+.table-headcount-2 > div > div {
+  display: table-cell;
+  padding: 8px;
+  border: 1px solid var(--table-body-border-color);
+  color: var(--table-body-text-color);
+  font-family: Poppins;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.table-headcount-2 > div:nth-child(even) > div {
+  background: var(--table-row-bg-color-even);
+}
+
+.table-headcount-2 > div:nth-child(1) > div, 
+.table-headcount-2 > div:nth-child(2) > div {
+  font-weight: bold;
+  background: var(--table-header-bg-color) !important;
+  color: var(--table-header-text-color);
+  font-family: Poppins;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}

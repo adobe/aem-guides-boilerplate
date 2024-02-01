@@ -1,0 +1,127 @@
+/* footer container block */
+footer .container {
+  display: block;
+  
+}
+
+footer .container-container .container-wrapper {
+  margin: unset;
+  max-width: unset;
+}
+
+footer .container > div {
+  display: block;
+}
+
+
+footer .container > div:nth-child(1) > div:nth-child(1) ol {
+  width: 100%;
+  font-size: 0.75rem;
+}
+
+footer .container > div:nth-child(1) > div:nth-child(1) p:nth-child(1) {
+  background-image: url('./footer.svg');
+  background-size: cover;
+  width: 8rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+  color: var(--footer-background-color) !important;
+}
+
+footer .container > div:nth-child(1) > div:nth-child(1) p:nth-child(2) {
+  font-family: Poppins !important;
+  font-size: 2rem !important;
+  font-style: normal;
+  font-weight: 600 !important;
+  line-height: 2rem;
+  padding-bottom: 4rem;
+}
+
+footer .container > div:nth-child(1) > div:nth-child(1) h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 1.0rem;
+  font-size: 1.5rem !important; 
+  border-bottom: var(--footer-font-color);
+  border-bottom-style: solid;
+
+}
+
+footer .container > div:nth-child(1) > div:nth-child(1) ol li {
+  width: fit-content;
+}
+
+footer .container > div:nth-child(2) {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+footer .container > div:nth-child(1) > div:nth-child(4) ul li:last-child ol li:nth-child(1) a {
+  background-image: url('./fb.svg');
+  background-size: cover;
+}
+
+footer .container > div:nth-child(1) > div:nth-child(4) ul li:last-child ol li:nth-child(2) a{
+  background-image: url('./twitter.svg');
+  background-size: cover;
+}
+
+footer .container > div:nth-child(1) > div:nth-child(4) ul li:last-child ol li:nth-child(3) a {
+  background-image: url('./insta.svg');
+  background-size: cover;
+}
+
+footer .container > div:nth-child(1) > div:nth-child(4) ul > li:last-child {
+  list-style: none;
+  margin-left: -1rem;
+  font-size: 0px !important;
+  margin-top: 3rem;
+}
+
+footer .container > div:nth-child(1) > div:nth-child(4) ul > li:last-child ol {
+  list-style: none;
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+}
+
+footer .container > div:nth-child(1) > div:nth-child(4) ul li:last-child ol li a{
+  font-size: 0px !important;
+}
+
+@media(max-width: 900px) {
+  footer .container > div > div:first-child {
+    padding-bottom: 2rem;
+    border-bottom: var(--footer-font-color);
+    border-bottom-style: solid;
+    margin-bottom: 2rem;
+  }
+
+  footer .container > div:nth-child(1) > div:nth-child(1) p:nth-child(2) {
+    padding-bottom: 1rem;
+  }
+}
+
+
+
+@media(min-width: 900px) {
+  footer .container > div {
+    display: flex;
+  }
+
+  footer .container > div:nth-child(1) > div:nth-child(1) {
+    border-right: var(--footer-font-color);
+    border-right-style: solid;
+    padding-right: 10%;
+  }
+
+  footer .container > div:nth-child(1) > div:nth-child(2) {
+    margin-left: 12%;
+  }
+  footer .container > div:nth-child(1) > div:nth-child(2),  
+  footer .container > div:nth-child(1) > div:nth-child(3),
+  footer .container > div:nth-child(1) > div:nth-child(4){
+    width: 25%;
+  }
+}
